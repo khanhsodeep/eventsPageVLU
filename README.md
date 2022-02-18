@@ -1,1 +1,3 @@
-# eventsPageVLU
+- Dự án website event của trường Đại Học Văn Lang
+- Nhóm thực hiện:Lương Quốc Khánh và Nguyễn Bá Thảo
+- Mục tiêu: Hoàn thành sản phẩm của khóa luận tốt nghiệp
