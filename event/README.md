@@ -76,3 +76,19 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Database account
+Created!
+You have successfully created a new database. The details are below.
+
+Username: jh6z74Y77p
+
+Database name: jh6z74Y77p
+
+Password: JjZdOLsTg6
+
+Server: remotemysql.com
+
+Port: 3306
+
+These are the username and password to log in to your database and phpMyAdmin

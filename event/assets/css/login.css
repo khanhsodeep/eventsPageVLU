@@ -1,0 +1,7 @@
+:root {
+    --primary-color:#f82249; 
+    }
+.register-now:hover{
+color: var(--primary-color);
+cursor: pointer;
+}
