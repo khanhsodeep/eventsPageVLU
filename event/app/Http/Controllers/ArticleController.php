@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;   
 use App\Models\Article;
+use App\Http\Requests\StoreArticleReuqest;
 
 class ArticleController extends Controller
 {
@@ -14,10 +15,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-        foreach($articles as $article){
-            echo $article->title;
-        }
+        $articles = Article::paginate(10);
+        return view('articles\list')->with('articles', $articles);
     }
 
     /**
@@ -27,7 +26,7 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles\create');
     }
 
     /**
@@ -36,9 +35,13 @@ class ArticleController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreArticleReuqest $request)
     {
-        //
+        $article = new Article;
+        $article->title = $request->title;
+        $article->content = $request->content;
+        $article->save();
+        return redirect()->route('bai-viet.create')->with('msg', 'Dang bai thanh cong');
     }
 
     /**
