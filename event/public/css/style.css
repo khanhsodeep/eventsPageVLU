@@ -125,13 +125,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .section-with-bg {
-  background-color: #f19cc3;
+  background-color: #e0e0e0;
+  /* background: url(../img/hero-bg2.jpg) top center;
+  background-size: cover;
+  overflow: hidden;
+  position: relative; */
 }
 
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
 #header {
+  background-color: #040919;
   height: 90px;
   position: fixed;
   left: 0;
@@ -168,7 +173,17 @@ h1, h2, h3, h4, h5, h6 {
     max-height: 30px;
   }
 }
+.dropdown-menu{
+  min-width: 200px;
+  
+}
+.dropdown-item:hover{
+color: #e0072f;
+cursor: pointer;
 
+transition: linear ;
+
+}
 /*--------------------------------------------------------------
 # Buy Tickets
 --------------------------------------------------------------*/
@@ -302,14 +317,17 @@ h1, h2, h3, h4, h5, h6 {
   visibility: visible;
 }
 @media (max-width: 1366px) {
-  .navbar .dropdown .dropdown ul {
+  .navbar .dropdown .dropdown  ul {
     left: -90%;
   }
   .navbar .dropdown .dropdown:hover > ul {
     left: -100%;
   }
 }
-
+.dropdown-custom a span{
+margin-left: 20px;
+color:#e0072f
+}
 /**
 * Mobile Navigation 
 */
@@ -1166,7 +1184,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #footer .footer-top {
   background: #040919;
-  padding: 60px 0 30px 0;
+  padding-top: 60px;
 }
 #footer .footer-top .footer-info {
   margin-bottom: 30px;

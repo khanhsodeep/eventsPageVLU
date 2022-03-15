@@ -585,81 +585,55 @@
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3 col-md-6 footer-info">
-              <img src="/img/logo.png" alt="TheEvenet" />
-            </div>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 footer-info">
+                        <img src="/img/logo.png" alt="TheEvenet" />
+                    </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Liên hệ</h4>
-              <ul>
-                <li>
-                  <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
-                </li>
-                <li>
-                  <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
-                </li>
-                <li>
-                  <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
-                </li>
-                <li>
-                  <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
-                </li>
-                <li>
-                  <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
-                </li>
-              </ul>
-            </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>Liên hệ</h4>
+                        <ul>
+                            <li>
+                                <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3110)</a></p>
+                            </li>
+                            <li>
+                                <p><a href="tel:+0287199218">028 7109 9212 (Ext: 3111)</a></p>
+                            </li>
+                            <li>
+                                <p><a href="mailto:sukien.vanlanguni.edu.vn">sukien.vanlanguni.edu.vn</a></p>
+                            </li>
+                        </ul>
+                    </div>
 
-            <div class="col-lg-3 col-md-6 footer-links">
-              <h4>Useful Links</h4>
-              <ul>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#">Home</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#">About us</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i> <a href="#">Services</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="#">Terms of service</a>
-                </li>
-                <li>
-                  <i class="bi bi-chevron-right"></i>
-                  <a href="#">Privacy policy</a>
-                </li>
-              </ul>
-            </div>
+                    <div class="col-lg-3 col-md-6 footer-links">
+                        <h4>THEO DÕI CHÚNG TÔI</h4>
+                        <div class="social-links">
+                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                            <a href="#" class="google-plus"><i class="bi bi-tiktok"></i></a>
+                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
 
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h4>KẾT NỐI</h4>
-              <p>Trụ sở: 45 Nguyễn Khắc Nhu, P.Cô Giang, Q.1, Hồ Chí Minh.</p>
-              <p>
-                Cơ sở 2: 233A Phan Văn Trị, P.11, Q.Bình Thạnh, Hồ Chí Minh.
-              </p>
-              <p>
-                Cơ sơ 3: 80/68 Dương Quảng Hàm, P.5, Q.Gò Vấp, Hồ Chí Minh.
-                69/68 Đặng Thùy Trâm, P.13, Q.Bình Thạnh, Hồ Chí Minh.
-              </p>
+                    <div class="col-lg-3 col-md-6 footer-contact">
+                        <h4>ĐỊA CHỈ</h4>
+                        <p>Trụ sở: 45 Nguyễn Khắc Nhu, P.Cô Giang, Q.1, Hồ Chí Minh.</p>
+                        <p>
+                            Cơ sở 2: 233A Phan Văn Trị, P.11, Q.Bình Thạnh, Hồ Chí Minh.
+                        </p>
+                        <p>
+                            Cơ sơ 3: 80/68 Dương Quảng Hàm, P.5, Q.Gò Vấp, Hồ Chí Minh.
+                            69/68 Đặng Thùy Trâm, P.13, Q.Bình Thạnh, Hồ Chí Minh.
+                        </p>
 
-              <div class="social-links">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"
-                  ><i class="bi bi-instagram"></i
-                ></a>
-                <a href="#" class="google-plus"><i class="bi bi-tiktok"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-              </div>
+                        
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </footer>
     <!-- End  Footer -->
 

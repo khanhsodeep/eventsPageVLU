@@ -21,8 +21,13 @@ Route::get('/', function () {
 Route::resource('/bai-viet', 'ArticleController');
 
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// user info
+Route::get('/home/profile', 'HomeController@userProfile')->name('/home/profile');
+
 
 Route::get('/admin', 'AdminController@showImportantInfo')
 ->middleware(['auth','role:admin']);

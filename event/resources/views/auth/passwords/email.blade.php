@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<section id="buy-tickets" class="section-with-bg">
+</section>
+<section id="buy-tickets" class="section-with-bg">
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -44,4 +47,5 @@
         </div>
     </div>
 </div>
+</section>
 @endsection
