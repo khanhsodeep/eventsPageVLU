@@ -1,25 +1,31 @@
 @extends('layouts.app')
 @section('content')
+<section id="speakers" class="section-with-bg">
+</section>
 <section id="speakers">
         <div class="container" data-aos="fade-up">
             <div class="section-header">
-                <h2>Tên danh mục</h2>
+                <h2>Sự kiện {{$event[0]->name}}</h2>
             </div>
 
             <div class="row">
+                @foreach($event as $v)
                 <div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/img/speakers/1.jpg" alt="Speaker 1" class="img-fluid" />
+                        <img src="/img/speakers/2.jpg" alt="Speaker 1" class="img-fluid" />
                         <div class="details">
-                            <h3><a href="event-details.html">DỰ ÁN TÔ MÀU GIẤC MƠ</a></h3>
-                            <p>7:00 - 27/05/2021, Hội trường Trịnh Công Sơn, CS3</p>
+                            <h3><a href="{{route('user.event.detail', ['id' => $v->id])}}">{{$v->name_event}}</a></h3>
+                            <p>{{$v->time}}, {{$v->address}}</p>
                             <div class="social">
-                                <a class="buy-tickets scrollto" href="{{ url('/view-event') }}">Tham gia ngay</a>
+                            @if (Auth::check())
+                                <a class="buy-tickets scrollto" href="{{route('user.event.detail', ['id' => $v->id])}}">Tham gia ngay</a>
+                            @endif
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="200">
                         <img src="/img/speakers/2.jpg" alt="Speaker 2" class="img-fluid" />
                         <div class="details">
@@ -90,7 +96,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

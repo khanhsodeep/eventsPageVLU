@@ -213,6 +213,9 @@ transition: linear ;
     margin: 0 15px 0 0;
   }
 }
+.buy-tickets-hover:hover{
+  background-color: #040919;
+}
 
 
 /**
@@ -793,13 +796,13 @@ color:#e0072f
 #likes .hearts i {
   color: #f0005c;
 }
-#likes p {
+/* #likes p {
   padding: 0 20px;
   margin-bottom: 20px;
   color: #060c22;
   font-style: italic;
   font-size: 15px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Gallery Section
@@ -991,6 +994,7 @@ color:#e0072f
 #buy-tickets {
   padding: 60px 0;
 }
+
 #buy-tickets .card {
   border: none;
   border-radius: 5px;

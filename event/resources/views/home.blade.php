@@ -11,29 +11,31 @@
     </div>
 </section>
 <main id="main">
-    
+
     <!-- ======= Events Section ======= -->
     <section id="speakers">
-        <div class="container" data-aos="fade-up">
+        <div class="container" data-aos="fade-up">                                     
             <div class="section-header">
                 <h2>sự kiện nổi bật</h2>
                 <p>Ở đây có các sự kiện nổi bật trong tháng này!</p>
             </div>
 
             <div class="row">
+                @foreach($event_hot as $event)
                 <div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="100">
-                        <img src="/img/speakers/1.jpg" alt="Speaker 1" class="img-fluid" />
+                        <img src="{{ asset('file/' . $event->image) }}" alt="Speaker 1" class="img-fluid" />
                         <div class="details">
-                            <h3><a href="event-details.html">DỰ ÁN TÔ MÀU GIẤC MƠ</a></h3>
-                            <p>7:00 - 27/05/2021, Hội trường Trịnh Công Sơn, CS3</p>
+                            <h3><a href="{{ route('user.event.detail', ['id' => $event->id]) }}">{{$event->name_event}}</a></h3>
+                            <p>{{$event->time}}, {{$event->address}}</p>
                             <div class="social">
-                                <a class="buy-tickets scrollto" href="{{ url('/view-event') }}">Tham gia ngay</a>
+                                <a class="buy-tickets scrollto" href="{{ route('user.event.detail', ['id' => $event->id]) }}">Tham gia ngay</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="speaker" data-aos="fade-up" data-aos-delay="200">
                         <img src="/img/speakers/2.jpg" alt="Speaker 2" class="img-fluid" />
                         <div class="details">
@@ -104,7 +106,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -118,24 +120,23 @@
                 <h2>Sự kiện yêu thích</h2>
                 <p>Các sự kiện được yêu thích nhất trong tháng</p>
             </div>
-
             <div class="row" data-aos="fade-up" data-aos-delay="100">
+                @foreach($event_favourite as $v)
                 <div class="col-lg-4 col-md-6">
                     <div class="like">
                         <div class="like-img">
-                            <img src="/img/likes/1.jpg" alt="" class="img-fluid" />
+                            <img src="{{ asset('file/' . $v->image) }}" alt="" class="img-fluid" />
                         </div>
                         <h3>
-                            <a href="#">LỄ TRAO CHỨNG NHẬN QS-STARs 4 SAO VÀ LỄ KHAI GIẢNG KHÓA 27
-                                NĂM HỌC 2021 - 2022</a>
+                            <a href="{{ route('user.event.detail', ['id' => $event->id]) }}">{{$v->name_event}}</a>
                         </h3>
                         <div class="hearts">
-                            <i class="bi bi-heart-fill"> 2325 lượt yêu thích</i>
+                            <i class="bi bi-heart-fill"> {{$v->member}} lượt tham gia</i>
                         </div>
                     </div>
                 </div>
-
-                <div class="col-lg-4 col-md-6">
+                @endforeach
+                <!-- <div class="col-lg-4 col-md-6">
                     <div class="like">
                         <div class="like-img">
                             <img src="/img/likes/2.jpg" alt="" class="img-fluid" />
@@ -159,7 +160,7 @@
                             <i class="bi bi-heart-fill"> 555 lượt yêu thích</i>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

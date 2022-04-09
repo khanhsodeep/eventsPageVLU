@@ -29,8 +29,9 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet" />
 
     <!-- Styles -->
-    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" /> -->
+    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css" /> -->
+    @stack('style')
 </head>
 
 <body>
@@ -58,29 +59,29 @@
                         <a href="#"><span>Hội nghị - Sự kiện</span>
                             <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Học Thuật</a></li>
-                            <li><a href="#">Văn Hóa</a></li>
-                            <li><a href="#">Thể Thao</a></li>
+                            <li><a href="{{route('client.category', ['id' => 1])}}">Học Thuật</a></li>
+                            <li><a href="{{route('client.category', ['id' => 2])}}">Văn Hóa</a></li>
+                            <li><a href="{{route('client.category', ['id' => 3])}}">Thể Thao</a></li>
                         </ul>
                     </li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
-                </nav>
-                @guest
-                <div class="top-right links">
-                    @if (Route::has('login'))
-                    <a class="buy-tickets scrollto mx-" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
-                    @endif
-                    @if (Route::has('register'))
+            </nav>
+            @guest
+            <div class="top-right links">
+                @if (Route::has('login'))
+                <a class="buy-tickets scrollto mx-" href="{{ route('login') }}">{{ __('Đăng nhập') }}</a>
+                @endif
+                @if (Route::has('register'))
 
-                    <a class="buy-tickets scrollto mx-" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
+                <a class="buy-tickets scrollto mx-" href="{{ route('register') }}">{{ __('Đăng ký') }}</a>
 
-                    @endif
-                    @else
-                    <nav class="navbar order-last order-lg-0">
+                @endif
+                @else
+                <nav class="navbar order-last order-lg-0">
                     <ul class="dropdown dropdown-custom">
                         <a>
-                            <span>Xin chào, {{ Auth::user()->name }}</span>
+                            <span>Xin chào, {{ Auth::user()->fullname }}</span>
                         </a>
 
                         <ul>
@@ -99,11 +100,11 @@
 
                         </ul>
                     </ul>
-                    </nav>
+                </nav>
 
-                    @endguest
-                </div>
-         
+                @endguest
+            </div>
+
 
         </div>
         </div>
@@ -161,7 +162,7 @@
                             69/68 Đặng Thùy Trâm, P.13, Q.Bình Thạnh, Hồ Chí Minh.
                         </p>
 
-                        
+
                     </div>
                 </div>
             </div>
