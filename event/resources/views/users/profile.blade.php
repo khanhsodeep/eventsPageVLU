@@ -3,7 +3,7 @@
 <link href="/css/profile.css" rel="stylesheet" type="text/css" />
 <link href="/css/profile2.css" rel="stylesheet" type="text/css" />
 <script src="/js/profile.js"></script>
-<script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+<script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <section id="buy-tickets" class="section-with-bg">
 
@@ -180,6 +180,8 @@
                                     <th scope="col">Ngày tổ chức</th>
                                     <th scope="col">Địa điểm</th>
                                     <th scope="col">Số vé</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -190,6 +192,27 @@
                                     <td>{{$e->time}}</td>
                                     <td>{{$e->address}}</td>
                                     <td>{{$e->amount}}</td>
+                                    @if ($e->status == 1)
+                                    <td>Đã được duyệt</td>
+                                    @else
+                                    <td>Chưa được duyệt</td>
+                                    @endif
+                                    @if ($e->status == 0)
+                                    <td class="project-actions text-center">
+                                        <a href="{{route('client.event.edit', ['id' => $e->id])}}" class="btn btn-info btn-sm">
+                                            <i class="fas fa-pencil-alt"> </i>
+                                            Sửa
+                                        </a>
+                                        <a href="{{route('client.event.delete', ['id' => $e->id])}}" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn xóa Sự kiện này')">
+                                            <i class="fas fa-trash"> </i>
+                                            Xóa
+                                        </a>
+
+                                    </td>
+                                    @else
+                                    <td>Không thể sửa</td>
+                                    @endif
+
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -246,7 +269,7 @@
                             <div class="row">
                                 <div class="form-group col-6">
                                     <label for="phone">Số vé</label>
-                                    <input type="number" id="amount" name="amount" class="form-control" required placeholder="Nhập số lượng vé">
+                                    <input type="number" id="amount" name="amount" class="form-control" required placeholder="Nhập số lượng vé" min="1">
                                 </div>
                                 <div class="form-group col-6">
                                     <label for="phone">Hình ảnh</label>

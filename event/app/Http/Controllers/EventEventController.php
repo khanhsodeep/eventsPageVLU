@@ -63,7 +63,7 @@ class EventEventController extends Controller
         ];
 
         DB::table('event')->insert($data);
-        return redirect()->route('admin.event.add')->with('alert_success', 'Tạo sự kiện thành công.');
+        return redirect()->route('admin.event.add')->with('success', 'Tạo sự kiện thành công.');
     }
 
     public function getEdit($id)
@@ -105,7 +105,7 @@ class EventEventController extends Controller
                 'address' => $request->address,
                 'image' => $fileName,
             ]);
-            return redirect()->route('admin.event.edit', ['id' => $id])->with('alert_success', 'Cập nhật sự kiện thành công.');
+            return redirect()->route('admin.event.edit', ['id' => $id])->with('success', 'Cập nhật sự kiện thành công.');
         } else {
             $event = DB::table('event')->where('id', $id)->limit(1);
             $event->update([
@@ -118,14 +118,14 @@ class EventEventController extends Controller
                 'time' => $request->time,
                 'address' => $request->address,
             ]);
-            return redirect()->route('admin.event.edit', ['id' => $id])->with('alert_success', 'Cập nhật sự kiện thành công.');
+            return redirect()->route('admin.event.edit', ['id' => $id])->with('success', 'Cập nhật sự kiện thành công.');
         }
     }
 
     public function getDelete($id)
     {
         DB::table('event')->where('id', $id)->delete();
-        return redirect()->route('admin.event')->with('alert_success', 'Xóa sự kiện thành công.');
+        return redirect()->route('admin.event')->with('success', 'Xóa sự kiện thành công.');
     }
 
     public function getEvent()
@@ -146,7 +146,10 @@ class EventEventController extends Controller
     {
         $event = DB::table('event')->where('id', $id)->first();
         if ($event->amount == 0) {
-            return redirect()->route('/home/profile')->with('alert_error', 'Đã hết vé.');
+            return redirect()->back()->with('error', 'Đã hết vé.');
+        }
+        if (DB::table('ticket')->where('user_id', 1)->exists()) {
+            return redirect()->back()->with('error', 'Bạn đã đăng ký sự kiện này rồi');
         }
         DB::table('event')
             ->where('id', $id)
@@ -163,9 +166,8 @@ class EventEventController extends Controller
             'user_id' => Auth::user()->id,
             'event_id' => $event->id
         ];
-
         DB::table('ticket')->insert($data);
-        return redirect()->route('/home/profile')->with('alert_success', 'Tham gia sự kiện thành công.');
+        return redirect()->back()->with('success', 'Tham gia sự kiện thành công.');
     }
 
     public function getRankingEvent()
@@ -185,9 +187,9 @@ class EventEventController extends Controller
     {
         $event = DB::table('event')->where('user_id', Auth::user())->orWhere('id', $id)->delete();
         if (!$event) {
-            return redirect()->back()->with('alert_error', 'Thông tin sự kiện không tồn tại.');
+            return redirect()->back()->with('error', 'Thông tin sự kiện không tồn tại.');
         }
-        return redirect()->route('/home/profile')->with('alert_success', 'Xoá sự kiện thành công.');
+        return redirect()->route('/home/profile')->with('success', 'Xoá sự kiện thành công.');
     }
 
     public function editEventUser($id)
@@ -199,7 +201,7 @@ class EventEventController extends Controller
         $user_event = DB::table('event')->where('user_id', Auth::user())->orWhere('id', $id)->first();
         $listCategory = DB::table('categories')->get();
         if (!$user_event) {
-            return redirect()->back()->with('alert_error', 'Thông tin sự kiện không tồn tại.');
+            return redirect()->back()->with('error', 'Thông tin sự kiện không tồn tại.');
         }
         $data = [
             'event' => $event,
@@ -239,7 +241,7 @@ class EventEventController extends Controller
                 'member' => 0,
                 'image' => $request->image
             ]);
-            return redirect()->route('/home/profile')->with('alert_success', 'Cập nhật sự kiện thành công.');
+            return redirect()->route('/home/profile')->with('success', 'Cập nhật sự kiện thành công.');
         } else {
             $user_event = DB::table('event')->where('user_id', Auth::user())->orWhere('id', $id)->limit(1);
             $user_event->update([
@@ -253,7 +255,7 @@ class EventEventController extends Controller
                 'member' => 0,
                 // 'image' => $request->image
             ]);
-            return redirect()->route('/home/profile')->with('alert_success', 'Cập nhật sự kiện thành công.');
+            return redirect()->route('/home/profile')->with('success', 'Cập nhật sự kiện thành công.');
         }
     }
 }

@@ -1,8 +1,9 @@
 <?php
-
+use RealRashid\SweetAlert\Facades\Aler;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Auth\ForgotPasswordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () {
         'event_hot' => $event_hot,
         'event_favourite' => $event_favourite
     ];
-    return view('/welcome', $data);
+    return view('/home', $data);
 });
 
 // Route::get('/', 'HomeController@getWelcomer')->name('client.welcome');
@@ -75,3 +76,8 @@ Route::get('/event/delete/{id}', 'EventEventController@deleteEventUser')->name('
 
 Route::get('/event/edit/{id}', 'EventEventController@editEventUser')->name('client.event.edit');
 Route::put('/event/edit/{id}', 'EventEventController@putEventUser')->name('client.event.put');
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');

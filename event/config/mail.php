@@ -41,6 +41,7 @@ return [
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
+            
         ],
 
         'ses' => [
@@ -74,8 +75,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'ksdlazada@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Dat lai mat khau'),
     ],
 
     /*

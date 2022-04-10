@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
@@ -12,6 +13,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+
 
 
     <!-- Vendor CSS Files -->
@@ -29,19 +32,19 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet" />
 
     <!-- Styles -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" /> -->
-    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" />
     @stack('style')
 </head>
 
 <body>
     <header id="header" class="d-flex align-items-center">
         <div class="container-fluid container-xxl d-flex align-items-center">
-            <div id="logo" class="me-auto m-lg-auto">
-                <a href="{{ route('home') }}" class="scrollto"><img src="/img/logo.png" alt="" title="" /></a>
+            <div id="logo" class="me-auto ">
+                <a href="#" class="scrollto"><img src="/img/logo.png" alt="" title="" /></a>
             </div>
 
-            <nav id="navbar" class="navbar order-last order-lg-0">
+            <nav id="navbar" class="navbar order-last order-lg-0 me-auto">
                 <ul>
                     <li>
                         <a class="nav-link scrollto active" href="{{ route('home') }}">Trang chủ</a>
@@ -54,6 +57,9 @@
                     </li>
                     <li>
                         <a class="nav-link scrollto" href="#gallery">Khoảnh khắc</a>
+                    </li>
+                    <li>
+                        <a class="nav-link scrollto" href="#faq">Câu hỏi thường gặp</a>
                     </li>
                     <li class="dropdown">
                         <a href="#"><span>Hội nghị - Sự kiện</span>

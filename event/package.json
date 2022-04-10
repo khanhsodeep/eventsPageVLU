@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "@ckeditor/ckeditor5-build-classic": "^33.0.0",
-        "browser-sync": "^2.27.7"
+        "browser-sync": "^2.27.7",
+        "sweetalert2": "^11.4.8"
     }
 }

@@ -37335,8 +37335,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\TAILIEUHOCTAP\HK2-2021-2022\Web\event\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\TAILIEUHOCTAP\HK2-2021-2022\Web\event\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\TAILIEUHOCTAP\HK2-2021-2022\LuanAnTotNghiep\GitHub\event\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\TAILIEUHOCTAP\HK2-2021-2022\LuanAnTotNghiep\GitHub\event\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

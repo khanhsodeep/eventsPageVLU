@@ -84,7 +84,7 @@ class UserController extends Controller
                 'role_id' => $request->input('role_id'),
                 'password' => Hash::make($request->password)
             ]);
-            return redirect()->route('admin.user.edit', ['id' => $id])->with('alert_success', 'Cập nhật người dùng thành công.');
+            return redirect()->route('admin.user.edit', ['id' => $id])->with('success', 'Cập nhật người dùng thành công.');
         } else {
             $user = DB::table('users')->where('id', $id)->limit(1);
             $user->update([
@@ -95,7 +95,7 @@ class UserController extends Controller
                 'phone' => $request->input('phone'),
                 'role_id' => $request->input('role_id'),
             ]);
-            return redirect()->route('admin.user.edit', ['id' => $id])->with('alert_success', 'Cập nhật người dùng thành công.');
+            return redirect()->route('admin.user.edit', ['id' => $id])->with('success', 'Cập nhật người dùng thành công.');
         }
     }
 
@@ -161,7 +161,7 @@ class UserController extends Controller
         ];
 
         DB::table('event')->insert($data);
-        return redirect()->back()->with('alert_success', 'Tạo sự kiện thành công.');
+        return redirect()->back()->with('success', 'Tạo sự kiện thành công.');
     }
 
     public function editUserClient(Request $request)
@@ -179,13 +179,13 @@ class UserController extends Controller
                 'fullname' => $request->fullname,
                 'password' => Hash::make($request->password)
             ]);
-            return redirect()->back()->with('alert_success', 'Cập nhật thông tin thành công.');
+            return redirect()->back()->with('success', 'Cập nhật thông tin thành công.');
         } else {
             $user = DB::table('users')->where('id', Auth::user()->id)->limit(1);
             $user->update([
                 'fullname' => $request->fullname,
             ]);
-            return redirect()->back()->with('alert_success', 'Cập nhật thông tin thành công.');
+            return redirect()->back()->with('success', 'Cập nhật thông tin thành công.');
         }
     }
 }

@@ -127,7 +127,7 @@
                     </div>
                     <div class="form-group col-6">
                         <label for="phone">Số vé</label>
-                        <input type="number" id="amount" name="amount" class="form-control">
+                        <input type="number" id="amount" name="amount" class="form-control" min="1">
                     </div>
                 </div>
                 <div class="row">

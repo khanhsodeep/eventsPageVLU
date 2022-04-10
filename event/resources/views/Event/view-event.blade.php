@@ -14,6 +14,7 @@
 <main id="main" class="main-page">
     <section id="speakers-details" class="wow fadeIn">
         <div class="container">
+        @include('sweetalert::alert')
             <div class="section-header">
                 <h2>Nội dung sự kiện</h2>
             </div>
@@ -29,9 +30,11 @@
                             <h2>{{ $event->name_event }}</h2>
                             @if (Auth::check())
                             <button class="buy-tickets buy-tickets-hover scrollto" href="{{route('user.event.detail', ['id' => $event->id])}}">Tham gia ngay</button>
+                            @endif
                             <i class="mt-2">Số vé còn lại: {{$event->amount}} </i> - 
                             <i class="mt-2">Thời hạn đăng ký: {{$event->time}} </i>
                             <p class="mt-2">{{ strip_tags(str_replace("&nbsp;"," ",$event->content)) }}</p>
+                            @if (Auth::check())
                             @endif
                             
                         </div>
