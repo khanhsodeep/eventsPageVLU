@@ -217,7 +217,7 @@
                                     <td>{{$value->name_event}}</td>
                                     <td>{{$value->time}}</td>
                                     <td>{{$value->address}}</td>
-                                    <td>{{$value->code}}</td>
+                                    <td><a href="qr-code">{{$value->code}}</a> </td>
                                 </tr>
                                 @endforeach
                             </tbody>

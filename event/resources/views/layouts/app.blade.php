@@ -29,8 +29,8 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet" />
 
     <!-- Styles -->
-    <!-- <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" /> -->
-    <!-- <link href="/css/style.css" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" />
+    <link href="/css/style.css" rel="stylesheet" type="text/css" /> 
     @stack('style')
 </head>
 

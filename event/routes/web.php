@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\QrCodeGeneratorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/', function () {
 });
 
 // Route::get('/', 'HomeController@getWelcomer')->name('client.welcome');
-
+Route::get('/home/qr-code', [QrCodeGeneratorController::class, 'index']);
 
 Auth::routes();
 Auth::routes(['verify' => true]);
